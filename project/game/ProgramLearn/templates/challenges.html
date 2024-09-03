@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ level.name }} Challenges</title>
+</head>
+<body>
+    <h1>{{ level.name }} Challenges</h1>
+    <ul>
+        {% for challenge in challenges %}
+            <li><a href="{% url 'challenge_detail' challenge.id %}">{{ challenge.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Levels</a>
+</body>
+</html>

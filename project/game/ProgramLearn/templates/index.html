@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programming Learning Game</title>
+</head>
+<body>
+    <h1>Programming Learning Game</h1>
+    <h2>Select a Level</h2>
+    <ul>
+        {% for level in levels %}
+            <li><a href="{% url 'challenges' level.id %}">{{ level.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

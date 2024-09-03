@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ challenge.title }}</title>
+</head>
+<body>
+    <h1>{{ challenge.title }}</h1>
+    <p>{{ challenge.description }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="code" rows="10" cols="80">{{ challenge.code_stub }}</textarea><br>
+        <button type="submit">Submit Code</button>
+    </form>
+    {% if feedback %}
+        <p>{{ feedback }}</p>
+    {% endif %}
+    <a href="{% url 'challenges' challenge.level.id %}">Back to Challenges</a>
+</body>
+</html>
