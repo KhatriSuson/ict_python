@@ -1,12 +1,16 @@
-n = int(input("Enter any nuber:"))
-count = 0
-for j in range(1,n+1):
-    if n % j == 0:
-        count += 1
-if count == 2:
-    print(f"{n} is prime")
+def len(a):
+    number = 1234545
+    length = 0
+    temp = abs(number)  # Handle negative numbers
 
-else:
-    print(f"{n} is not prime")
+    while temp > 0:
+        temp //= 10
+        length += 1
 
+    # Edge case for 0
+    if number == 0:
+        length = 1
 
+    x = length # Output: 5
+
+print(len())
